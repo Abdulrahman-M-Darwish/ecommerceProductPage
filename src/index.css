@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: hsl(26, 100%, 55%);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.12);
+	opacity: 0.5;
+	backdrop-filter: blur(60px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(21, 100%, 55%);
+}
+
+@layer components {
+	.active {
+		@apply before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-white before:opacity-60 before:rounded-lg;
+	}
+	.active img {
+		@apply border-[3px] border-primary-100;
+	}
+	.thumbnails {
+		@apply h-fit relative after:absolute after:w-full after:h-full after:bg-white after:opacity-0 after:left-0 after:top-0 after:rounded-lg after:hover:opacity-60;
+	}
+	.thumbnails img {
+		@apply pointer-events-none rounded-lg;
+	}
+}
